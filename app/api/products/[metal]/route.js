@@ -18,8 +18,17 @@ export async function GET(_req, { params }) {
     let products = [];
     let count = 0;
 
-    // Use case-insensitive, partial match for category
-    const categoryFilter = category ? { category: { $regex: category, $options: "i" } } : {};
+    // Use case-insensitive STRICT match for category (match whole word, allow optional plural)
+    // This prevents 'ring' matching 'earring'. We build a safe regex from the provided category.
+    let categoryFilter = {};
+    if (category) {
+      const safe = category.replace(/[^a-zA-Z]/g, "").toLowerCase();
+      if (safe) {
+        // match whole word, allow optional trailing 's' (rings vs ring)
+        const re = new RegExp(`\\b${safe}s?\\b`, "i");
+        categoryFilter = { category: { $regex: re } };
+      }
+    }
 
     if (metal === "gold") {
       products = await GoldProduct.find(categoryFilter);

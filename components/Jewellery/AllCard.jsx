@@ -8,7 +8,7 @@ export default function AllCard() {
     { id: 2, name: "Diamond Ring", image: "/images/jewellery2.jpg", href: "/collections/diamond/" },
     { id: 3, name: "Silver Earrings", image: "/images/jewellery3.jpg", href: "/collections/silver/earrings" },
     { id: 4, name: "Gold Necklace", image: "/images/jewellery4.jpg", href: "/collections/gold/necklaces" },
-    { id: 5, name: "Traditional Anklet", image: "/images/jewellery5.jpg", href: "/collections/silver/anklets" },
+    { id: 5, name: "Traditional Anklet", image: "/images/jewellery5.jpeg", href: "/collections/silver/anklets" },
     { id: 6, name: "Pearl Pendant", image: "/images/jewellery6.jpg", href: "/product/6" },
     { id: 7, name: "Silver Bracelet", image: "/images/jewellery7.jpg", href: "/product/7" },
     { id: 8, name: "Gemstone Ring", image: "/images/jewellery8.jpg", href: "/collections/gold/rings" },

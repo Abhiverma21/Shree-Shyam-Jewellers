@@ -86,7 +86,7 @@ export default function Collect() {
       {/* CTA Button */}
       <div className="text-center mt-12">
         <a
-          href="/product"
+          href="/collections/gold"
           className="inline-block bg-amber-700 hover:bg-amber-800 text-white text-base font-medium px-8 py-3 rounded-full shadow-md hover:shadow-lg transition-transform duration-300 hover:scale-105"
         >
           View All Products

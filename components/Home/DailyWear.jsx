@@ -68,7 +68,7 @@ export default function DailyWear() {
         </p>
 
         <a
-          href="/collection/daily-wear"
+          href="/collections/gold"
           className="inline-block mt-6 bg-amber-600 hover:bg-amber-700 text-white font-medium px-8 py-3 rounded-full shadow-md transition-transform duration-300 hover:scale-105 w-fit mx-auto lg:mx-0"
         >
           Explore Collection

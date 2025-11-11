@@ -14,14 +14,14 @@ export default function GoldCollection() {
   };
 
   const categories = [
-    { name: "Rings", image: "/categories/rings.jpg", link: "/collections/gold/rings" },
-    { name: "Necklaces", image: "/categories/necklaces.jpg", link: "/collections/gold/necklaces" },
-    { name: "Earrings", image: "/categories/earrings.jpg", link: "/collections/gold/earrings" },
-    { name: "Bangles", image: "/categories/bangles.jpg", link: "/collections/gold/bangles" },
-    { name: "Mangalsutra", image: "/categories/mangalsutra.jpg", link: "/collections/gold/mangalsutra" },
-    { name: "Anklets", image: "/categories/anklets.jpg", link: "/collections/gold/anklets" },
-    { name: "Pendants", image: "/categories/pendants.jpg", link: "/collections/gold/pendants" },
-    { name: "Coins", image: "/categories/coins.jpg", link: "/collections/gold/coins" },
+    { name: "Rings", image: "/goldpage/rings.webp", link: "/collections/gold/rings" },
+    { name: "Necklaces", image: "/goldpage/necklaces.jpg", link: "/collections/gold/necklaces" },
+    { name: "Earrings", image: "/goldpage/earrings.webp", link: "/collections/gold/earrings" },
+    { name: "Bangles", image: "/goldpage/bangles.webp", link: "/collections/gold/bangles" },
+    { name: "Mangalsutra", image: "/goldpage/mangalsutra.jpg", link: "/collections/gold/mangalsutra" },
+    { name: "Anklets", image: "/goldpage/anklet.webp", link: "/collections/gold/anklets" },
+    { name: "Pendants", image: "/goldpage/pendent.jpg", link: "/collections/gold/pendants" },
+    { name: "Coins", image: "/goldpage/coins.jpg", link: "/collections/gold/coins" },
   ];
 
   const highlights = [
@@ -31,9 +31,9 @@ export default function GoldCollection() {
   ];
 
   const trending = [
-    { name: "Royal Bridal Necklace", image: "/goldtrending/trend1.jpg", price: "₹ 1,45,000" },
-    { name: "Diamond-Studded Kada", image: "/goldtrending/trend2.jpg", price: "₹ 89,999" },
-    { name: "Temple Design Earrings", image: "/goldtrending/trend3.jpg", price: "₹ 24,500" },
+    { name: "Royal Bridal Necklace", image: "/goldpage/bridal.jpg", price: "₹ 1,45,000" },
+    { name: "Diamond-Studded Kada", image: "/goldpage/diamond.webp", price: "₹ 89,999" },
+    { name: "Temple Design Earrings", image: "/goldpage/temple.jpg", price: "₹ 24,500" },
   ];
 
   return (
@@ -41,7 +41,7 @@ export default function GoldCollection() {
       {/* Hero Section */}
       <section className="relative w-full h-[50vh] md:h-[65vh] flex justify-center items-center overflow-hidden">
         <Image
-          src="/banners/goldbanner.jpg"
+          src="/goldpage/banner2.jpeg"
           alt="Gold Collection Banner"
           fill
           className="object-cover opacity-90"

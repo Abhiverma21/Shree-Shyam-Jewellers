@@ -54,7 +54,7 @@ const images = [
 
           <div className="mt-8">
             <a
-              href="/collection"
+              href="/collections/gold"
               className="inline-block bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-300 text-gray-900 font-semibold py-3 px-6 rounded-full shadow-md hover:scale-105 transition-transform duration-300"
             >
               View Complete Gallery

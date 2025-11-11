@@ -183,7 +183,7 @@ export default function Navbar() {
                     : "opacity-0 invisible translate-y-1"
                 }`}
               >
-                {["Gold", "Silver", "Diamond", "Bridal"].map((item) => (
+                {["Gold", "Silver", "Diamond"].map((item) => (
                   <Link
                     key={item}
                     href={`/collections/${item.toLowerCase()}`}
@@ -365,7 +365,7 @@ export default function Navbar() {
               </button>
               {mobileCollectionsOpen && (
                 <div className="pl-4 mt-2 space-y-2 animate-slideDown">
-                  {["Gold", "Silver", "Diamond", "Bridal"].map((item) => (
+                  {["Gold", "Silver", "Diamond"].map((item) => (
                     <Link
                       key={item}
                       href={`/collections/${item.toLowerCase()}`}

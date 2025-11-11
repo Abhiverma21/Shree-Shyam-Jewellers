@@ -41,8 +41,8 @@ export default function Footer() {
           <div>
             <h4 className="text-xl font-semibold text-gray-300 mb-4">Connect With Us</h4>
             <p className="text-sm text-gray-400 mb-2">
-              📞 <a href="tel:+911234567890" className="hover:text-white">+91 12345 67890</a><br/>
-              ✉️ <a href="mailto:info@shyamjewellers.com" className="hover:text-white">info@shyamjewellers.com</a><br/>
+              📞 <a href="tel:+911234567890" className="hover:text-white">+91 9896416786</a><br/>
+              ✉️ <a href="mailto:shreeshyam.com" className="hover:text-white">shree.com</a><br/>
               📍 Store Locator: <Link href="/stores" className="hover:text-white">Find a store near you</Link>
             </p>
 

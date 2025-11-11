@@ -76,7 +76,23 @@ export default function AddProduct() {
     if (!form.image) return alert("Please upload an image first!");
 
     const totalPrice = +calculateTotal().toFixed(2);
-    const payload = { ...form, price: totalPrice };
+
+    // Map client form keys to schema keys. The Product schema expects
+    // `subcategory` (lowercase) while the form uses `subCategory`.
+    const payload = {
+      name: form.name,
+      metal: form.metal,
+      category: form.category,
+      subcategory: form.subCategory, // maps to schema's 'subcategory'
+      purity: form.purity,
+      weight: Number(form.weight) || 0,
+      makingCharge: Number(form.makingCharge) || 0,
+      gst: Number(form.gst) || 0,
+      description: form.description,
+      image: form.image,
+      // price is required and should be a Number
+      price: Number(totalPrice) || 0,
+    };
 
     const res = await fetch("/api/products", {
       method: "POST",
@@ -143,6 +159,8 @@ export default function AddProduct() {
               >
                 <option value="">Select Category</option>
                 <option value="Rings">Rings</option>
+                <option value="coins">Coins</option>
+                <option value="pendants">Pendant</option>
                 <option value="Necklaces">Necklaces</option>
                 <option value="Bracelets">Bracelets</option>
                 <option value="Earrings">Earrings</option>

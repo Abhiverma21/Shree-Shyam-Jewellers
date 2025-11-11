@@ -52,7 +52,7 @@ export default function WelcomePopup() {
 
         {/* Button */}
         <a
-          href="/collection"
+          href="/collections/gold"
           className="inline-block bg-yellow-600 hover:bg-yellow-700 text-white px-5 py-2 rounded-full font-semibold text-sm sm:text-base transition"
         >
           Explore Collections

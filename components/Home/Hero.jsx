@@ -40,7 +40,7 @@ export default function Hero() {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4">
           <a
-            href="/collection"
+            href="/collections/gold"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-gray-900 font-semibold py-3 px-7 rounded-full shadow-lg hover:scale-105 transform transition duration-200 focus:outline-none focus:ring-4 focus:ring-amber-300"
           >
             <svg

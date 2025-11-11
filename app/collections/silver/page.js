@@ -14,13 +14,13 @@ export default function SilverCollection() {
   };
 
   const categories = [
-    { name: "Rings", image: "/categories/silver/rings.jpg", link: "/collections/silver/rings" },
-    { name: "Necklaces", image: "/categories/silver/necklaces.jpg", link: "/collections/silver/necklaces" },
-    { name: "Earrings", image: "/categories/silver/earrings.jpg", link: "/collections/silver/earrings" },
-    { name: "Bangles", image: "/categories/silver/bangles.jpg", link: "/collections/silver/bangles" },
-    { name: "Pendants", image: "/categories/silver/pendants.jpg", link: "/collections/silver/pendants" },
-    { name: "Coins", image: "/categories/silver/coins.jpg", link: "/collections/silver/coins" },
-    { name: "Anklets", image: "/categories/silver/anklets.jpg", link: "/collections/silver/anklets" },
+    { name: "Rings", image: "/silverpage/rings.jpg", link: "/collections/silver/rings" },
+    { name: "Necklaces", image: "/silverpage/necklaces.jpeg", link: "/collections/silver/necklaces" },
+    { name: "Earrings", image: "/silverpage/earrings.jpg", link: "/collections/silver/earrings" },
+    { name: "Bangles", image: "/silverpage/bangles.jpg", link: "/collections/silver/bangles" },
+    { name: "Pendants", image: "/silverpage/pendents.jpeg", link: "/collections/silver/pendants" },
+    { name: "Coins", image: "/silverpage/coins.jpg", link: "/collections/silver/coins" },
+    { name: "Anklets", image: "/silverpage/anklets.jpg", link: "/collections/silver/anklets" },
   ];
 
   const highlights = [
@@ -30,9 +30,9 @@ export default function SilverCollection() {
   ];
 
   const trending = [
-    { name: "Silver Floral Necklace", image: "/silvertrending/trend1.jpg", price: "₹2,499" },
-    { name: "Silver Hoop Earrings", image: "/silvertrending/trend2.jpg", price: "₹1,299" },
-    { name: "Men's Silver Bracelet", image: "/silvertrending/trend3.jpg", price: "₹1,799" },
+    { name: "Silver Floral Necklace", image: "/silverpage/floral.webp", price: "₹2,499" },
+    { name: "Silver Hoop Earrings", image: "/silverpage/hoop.webp", price: "₹1,299" },
+    { name: "Men's Silver Bracelet", image: "/silverpage/mens.webp", price: "₹1,799" },
   ];
 
   return (
@@ -40,7 +40,7 @@ export default function SilverCollection() {
       {/* Hero Section */}
       <section className="relative w-full h-[45vh] md:h-[65vh] flex justify-center items-center overflow-hidden rounded-b-3xl shadow-lg">
         <Image
-          src="/banners/silverbanner.jpg"
+          src="/silverpage/banner.jpg"
           alt="Silver Collection Banner"
           fill
           className="object-cover opacity-90 rounded-b-3xl"
