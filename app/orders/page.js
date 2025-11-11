@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { FaCheckCircle, FaBoxOpen, FaTruck, FaMapMarkerAlt, FaPrint } from 'react-icons/fa';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useSearchParams } from 'next/navigation';
+// Note: avoid using `useSearchParams` here because it can cause a CSR bailout during
+// prerender and requires a Suspense boundary. We'll read the search params from
+// window.location inside the client-side effect instead.
 
 const Order = () => {
   const [orderDetails, setOrderDetails] = useState({
@@ -17,8 +19,6 @@ const Order = () => {
     estimatedDelivery: ''
   });
 
-  const searchParams = useSearchParams();
-  const orderIdParam = searchParams ? searchParams.get('orderId') : null;
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -49,6 +49,11 @@ const Order = () => {
       try {
         setLoading(true);
         setError('');
+
+        // Read orderId from URL search params in a client-safe way.
+        // This code runs only in the browser because it's inside useEffect.
+        const params = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+        const orderIdParam = params ? params.get('orderId') : null;
 
         const o = orderIdParam ? await fetchOrderById(orderIdParam) : await fetchLatestOrder();
 
@@ -82,7 +87,7 @@ const Order = () => {
     };
 
     load();
-  }, [orderIdParam]);
+  }, []);
 
   const handlePrintOrder = () => {
     window.print();
