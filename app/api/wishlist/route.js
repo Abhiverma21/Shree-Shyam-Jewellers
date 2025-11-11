@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import connectDB from "@/lib/mongodb";
-import Wishlist from "@/models/Wishlist";
+import Wishlist from "@/models/WishListModel";
 import { jwtVerify } from "jose";
 
 // Helper: Extract and verify JWT from cookies
