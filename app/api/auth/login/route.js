@@ -25,6 +25,9 @@ export async function POST(req) {
       return NextResponse.json({ message: "Invalid email or password" }, { status: 401 });
     }
 
+    // 📝 Update last active time
+    await User.updateOne({ _id: user._id }, { lastActive: new Date() });
+
     // 🎟️ Generate JWT token
     const token = jwt.sign(
       {

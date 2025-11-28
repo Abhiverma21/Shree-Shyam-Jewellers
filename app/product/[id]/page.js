@@ -32,23 +32,31 @@ export default function ProductDetail() {
     }
   }, [id]);
 
-  // 🧮 Rate Breakdown Calculation
-  const goldRatePerGram = 7000; // Example rate — can be fetched dynamically later
-  const makingChargePercent = 12;
-  const gstPercent = 3;
-
+  // 🧮 Rate Breakdown Calculation (use actual product data, not hardcoded values)
   const breakdown =
     product?.weight && product?.price
       ? (() => {
-          const goldValue = product.weight * goldRatePerGram;
-          const makingCharges = (goldValue * makingChargePercent) / 100;
-          const subtotal = goldValue + makingCharges;
-          const gst = (subtotal * gstPercent) / 100;
+          // Use actual product metalRate, makingCharge, and gst from database
+          const metalRate = product.metalRate || 7000; // fallback if not set
+          const makingChargePercent = product.makingCharge || 10;
+          const gstPercent = product.gst || 3;
+
+          const metalValue = product.weight * metalRate;
+          const makingCharges = (metalValue * makingChargePercent) / 100;
+          const subtotal = metalValue + makingCharges;
+          const gstAmount = (subtotal * gstPercent) / 100;
+          const calculatedTotal = subtotal + gstAmount;
+
           return {
-            goldValue,
+            metalRate,
+            metalValue,
             makingCharges,
-            gst,
-            total: subtotal + gst,
+            makingChargePercent,
+            gstAmount,
+            gstPercent,
+            subtotal,
+            total: calculatedTotal,
+            displayPrice: product.price, // actual stored price (may differ if recalculated on server)
           };
         })()
       : null;
@@ -174,20 +182,24 @@ export default function ProductDetail() {
                         className="mt-3 text-gray-700 text-sm space-y-1 border-t border-yellow-100 pt-3"
                       >
                         <div className="flex justify-between">
-                          <span>Gold Value ({product.weight}g)</span>
-                          <span>₹{breakdown.goldValue.toLocaleString()}</span>
+                          <span>Metal Value ({product.weight}g @ ₹{breakdown.metalRate}/g)</span>
+                          <span>₹{breakdown.metalValue.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
                         </div>
                         <div className="flex justify-between">
-                          <span>Making Charges ({makingChargePercent}%)</span>
-                          <span>₹{breakdown.makingCharges.toLocaleString()}</span>
+                          <span>Making Charges ({breakdown.makingChargePercent}%)</span>
+                          <span>₹{breakdown.makingCharges.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
                         </div>
                         <div className="flex justify-between">
-                          <span>GST ({gstPercent}%)</span>
-                          <span>₹{breakdown.gst.toLocaleString()}</span>
+                          <span>Subtotal</span>
+                          <span>₹{breakdown.subtotal.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>GST ({breakdown.gstPercent}%)</span>
+                          <span>₹{breakdown.gstAmount.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
                         </div>
                         <div className="flex justify-between font-semibold text-yellow-800 border-t border-yellow-200 pt-2">
-                          <span>Total Price</span>
-                          <span>₹{breakdown.total.toLocaleString()}</span>
+                          <span>Final Price</span>
+                          <span>₹{breakdown.displayPrice.toLocaleString()}</span>
                         </div>
                       </motion.div>
                     )}

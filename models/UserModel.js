@@ -1,4 +1,3 @@
-import { time } from "framer-motion";
 import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema({
@@ -23,9 +22,9 @@ const UserSchema = new mongoose.Schema({
         default:'user',
         required:true,
     },
-    lastactiveAt:{
+    lastActive:{
         type:Date,
-        default:time.now,
+        default:null,
     },
    },
     {timestamps:true}

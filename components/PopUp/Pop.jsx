@@ -47,7 +47,7 @@ export default function WelcomePopup() {
 
         {/* Contact Info */}
         <div className="text-xs sm:text-sm text-gray-500 mb-6 leading-relaxed">
-          📞 +91-9876543210 <br className="sm:hidden" /> 🏪 Model Town, Panipat
+          📞 +91-9896416786 <br className="sm:hidden" /> 🏪 Sector-3,Kurukshetra
         </div>
 
         {/* Button */}
